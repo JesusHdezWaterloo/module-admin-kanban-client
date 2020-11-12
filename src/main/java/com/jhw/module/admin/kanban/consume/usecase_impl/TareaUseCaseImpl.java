@@ -31,7 +31,9 @@ public class TareaUseCaseImpl extends DefaultCRUDUseCase<TareaDomain> implements
 
     @Override
     public TareaDomain move(MoveTarea move) throws Exception {
-        return repoUC.move(move);
+        TareaDomain tarea = repoUC.move(move);
+        firePropertyChange("edit", null, tarea);
+        return tarea;
     }
 
 }
