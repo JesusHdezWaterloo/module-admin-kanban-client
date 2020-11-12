@@ -28,7 +28,8 @@ public class TareaRepoImpl extends ConsumerRepoTemplate<TareaDomain> implements 
     @Override
     public List<TareaDomain> findByColumnaProyecto(ColumnaProyectVolatile.LightWeigth colProy) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(COL_PROY, colProy);
+        map.put(COLUMNA, colProy.idColumna);
+        map.put(PROYECTO, colProy.idProyecto);
         return RestTemplateUtils.getForList(template, urlGeneral + TAREA_FIND_BY_COL_PROY_PATH, map, TareaDomain.class);
     }
 
