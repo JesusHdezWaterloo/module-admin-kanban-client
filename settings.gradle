@@ -1,0 +1,55 @@
+rootProject.name = 'module-admin-kanban-client'
+
+include ':clean-core-full'
+project(':clean-core-full').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\clean-core-full" as File
+
+include ':utils-spring'
+project(':utils-spring').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-spring" as File
+
+include ':clean-swing'
+project(':clean-swing').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\clean-swing" as File
+
+include ':utils-core'
+project(':utils-core').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-core" as File
+
+include ':swing-derivable_icons'
+project(':swing-derivable_icons').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-derivable_icons" as File
+
+include ':swing-material-standards'
+project(':swing-material-standards').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-standards" as File
+
+include ':module-util-personalization'
+project(':module-util-personalization').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-personalization" as File
+
+include ':swing-material-chart'
+project(':swing-material-chart').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-chart" as File
+
+include ':swing-material-core'
+project(':swing-material-core').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-core" as File
+
+include ':swing-material-notifications'
+project(':swing-material-notifications').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-notifications" as File
+
+include ':swing-material-prepared'
+project(':swing-material-prepared').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-prepared" as File
+
+include ':swing-material-model'
+project(':swing-material-model').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-model" as File
+
+include ':module-util-default_configuration'
+project(':module-util-default_configuration').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-default_configuration" as File
+
+include ':module-util-licence'
+project(':module-util-licence').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-licence" as File
+
+include ':utils-export'
+project(':utils-export').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-export" as File
+
+include ':utils-files'
+project(':utils-files').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-files" as File
+
+include ':module-util-rest_config'
+project(':module-util-rest_config').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-rest_config" as File
+
+include ':module-admin-kanban-standard'
+project(':module-admin-kanban-standard').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-admin-kanban-standard" as File

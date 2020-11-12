@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.jhw.module.gestion'
+
+version = '2.0.0.SNAPSHOT.20201108'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version: '5.2.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '5.2.9.RELEASE'
+        
+    //JGit
+    compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.9.0.202009080501-r'
+    
+    implementation project(':utils-core')
+    implementation project(':utils-spring')
+    
+    implementation project(':clean-core-full')
+    implementation project(':clean-swing')
+    
+    implementation project(':swing-derivable_icons')
+
+    implementation project(':swing-material-standards')
+    implementation project(':swing-material-core')
+    implementation project(':swing-material-prepared')
+    implementation project(':swing-material-notifications')
+    implementation project(':swing-material-chart')
+    implementation project(':swing-material-model')
+    
+    implementation project(':module-util-personalization')
+    implementation project(':module-util-default_configuration')
+    implementation project(':module-util-licence')
+    
+    implementation project(':utils-export')
+    implementation project(':utils-files')
+    implementation project(':module-util-rest_config')
+    
+    implementation project(':module-admin-kanban-standard')
+}
+
+test {
+    useJUnitPlatform()
+}
