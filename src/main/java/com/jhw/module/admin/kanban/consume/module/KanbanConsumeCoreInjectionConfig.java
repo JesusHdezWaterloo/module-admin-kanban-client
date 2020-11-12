@@ -24,8 +24,8 @@ public class KanbanConsumeCoreInjectionConfig extends AbstractModule {
         bind(ProyectoUseCase.class).to(ProyectoUseCaseImpl.class).in(Singleton.class);
         bind(ProyectoUseCaseConsume.class).to(ProyectoUseCaseImpl.class).in(Singleton.class);
 
-        bind(ProyectoUseCase.class).to(ProyectoUseCaseImpl.class).in(Singleton.class);
-        bind(ProyectoUseCaseConsume.class).to(ProyectoUseCaseImpl.class).in(Singleton.class);
+        bind(TareaUseCase.class).to(TareaUseCaseImpl.class).in(Singleton.class);
+        bind(TareaUseCaseConsume.class).to(TareaUseCaseImpl.class).in(Singleton.class);
     }
 
 }
