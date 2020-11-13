@@ -39,6 +39,10 @@ public class KanbanModuleNavigator implements NavigationService {
     public static final DerivableIcon ICON_PRIORIDAD = MaterialIcons.WARNING;
     public static final DerivableIcon ICON_TAREA = MaterialIcons.NEW_RELEASES;
 
+    public static final DerivableIcon ICON_FOLDER = MaterialIcons.OPEN_IN_NEW;
+    public static final DerivableIcon ICON_BROWSER = MaterialIcons.OPEN_IN_BROWSER;
+    public static final DerivableIcon ICON_COPY = MaterialIcons.CONTENT_COPY;
+
     public static final String NAV_PROYECTO = GROUP + ".proyecto";
     public static final String NAV_COLUMNA = GROUP + ".columna";
     public static final String NAV_PRIORIDAD = GROUP + ".prioridad";
