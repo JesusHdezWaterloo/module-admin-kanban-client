@@ -62,29 +62,20 @@ public class KanbanProyecto extends _PanelGradient implements Update {
     private void initComponents() {
         this.setLayout(new BorderLayout());
 
-        _MaterialPanelComponent up = (_MaterialPanelComponent) MaterialContainersFactory.buildPanelComponent();
-        up.setGap(3);
-        up.setLayout(new BorderLayout());
-
-        labelNombreProyecto = MaterialLabelsFactory.build();
-        labelNombreProyecto.setHorizontalAlignment(SwingConstants.CENTER);
-        labelNombreProyecto.setFont(MaterialFontRoboto.BOLD.deriveFont(24f));
-
-        up.add(labelNombreProyecto);
-
         panelColumnas = MaterialContainersFactory.buildPanelTransparent();
+        header = KanbanProyectoHeader.from();
 
-        this.add(up, BorderLayout.NORTH);
+        this.add(header, BorderLayout.NORTH);
         this.add(panelColumnas, BorderLayout.CENTER);
     }
 
     private JPanel panelColumnas;
-    private MaterialLabel labelNombreProyecto;
+    private KanbanProyectoHeader header;
 
     @Override
     public void update() {
         updateColumns();
-        labelNombreProyecto.setText(proyecto.getNombreProyecto());
+        header.setObject(proyecto);
     }
 
     private void updateColumns() {
