@@ -5,6 +5,7 @@
  */
 package com.jhw.module.admin.kanban.consume.usecase_impl;
 
+import com.clean.core.app.services.ExceptionHandler;
 import com.clean.core.app.services.Notification;
 import com.clean.core.app.services.NotificationsGeneralType;
 import com.clean.core.app.usecase.*;
@@ -12,6 +13,9 @@ import com.jhw.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.jhw.module.admin.kanban.consume.repo_impl.*;
 import com.jhw.module.admin.kanban.consume.usecase_def.*;
 import com.jhw.module.admin.kanban.core.domain.*;
+import com.jhw.swing.util.ClipboardUtils;
+import com.jhw.utils.file.Browser;
+import com.jhw.utils.file.Opener;
 import java.util.List;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -45,6 +49,33 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
         }
 
         return false;
+    }
+
+    @Override
+    public void irACarpeta(ProyectoDomain proyecto) {
+        try {
+            Opener.from(proyecto.getUrlLocal()).open();
+        } catch (Exception ex) {
+            ExceptionHandler.handleException(ex);
+        }
+    }
+
+    @Override
+    public void irARepoOnline(ProyectoDomain proyecto) {
+        try {
+            Browser.from(proyecto.getUrlRepoOnline()).browse();
+        } catch (Exception ex) {
+            ExceptionHandler.handleException(ex);
+        }
+    }
+
+    @Override
+    public void copiarURLLocal(ProyectoDomain proyecto) {
+        try {
+            ClipboardUtils.copy(proyecto.getUrlLocal());
+        } catch (Exception ex) {
+            ExceptionHandler.handleException(ex);
+        }
     }
 
     /**
