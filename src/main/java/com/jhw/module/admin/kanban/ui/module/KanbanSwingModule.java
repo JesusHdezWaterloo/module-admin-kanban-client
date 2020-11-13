@@ -68,6 +68,8 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
     @Override
     public void update() {
         menu.clear();//limpia el menu
+        
+        String lastView = dash.getSelectedViewName();
         dash.removeGroupView(KanbanModuleNavigator.GROUP);//limpia las vistas
 
         //agrega todo lo demas
@@ -78,5 +80,7 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
 
         //repinta el dashboard
         dash.format();
+        
+        dash.showView(lastView);
     }
 }
