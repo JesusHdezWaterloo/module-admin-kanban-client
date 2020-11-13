@@ -17,7 +17,13 @@ public interface ProyectoUseCaseConsume extends ProyectoUseCase {
      * Revisa si un proyecto tiene al menos un remote
      *
      * @param proyecto
-     * @throws Exception
+     * @return
      */
     public boolean hasRemote(ProyectoDomain proyecto);
+
+    public void irACarpeta(ProyectoDomain proyecto);
+
+    public void irARepoOnline(ProyectoDomain proyecto);
+
+    public void copiarURLLocal(ProyectoDomain proyecto);
 }
