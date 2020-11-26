@@ -1,8 +1,6 @@
 package com.jhw.module.admin.kanban.ui.proyecto;
 
 import com.clean.core.app.services.ExceptionHandler;
-import com.jhw.utils.file.Browser;
-import com.jhw.utils.file.Opener;
 import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
 import com.jhw.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.jhw.module.admin.kanban.ui.module.KanbanSwingModule;
@@ -16,7 +14,6 @@ import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.models.clean.CleanDetailCRUDDragDrop;
 import com.jhw.swing.models.input.panels.ModelPanel;
-import com.jhw.swing.util.ClipboardUtils;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;
@@ -83,7 +80,7 @@ public class ProyectoDetailView extends CleanDetailCRUDDragDrop<ProyectoDomain> 
         boolean remote = KanbanSwingModule.proyectoUC.hasRemote(obj);
 
         HorizontalLayoutContainer.builder hlc = HorizontalLayoutContainer.builder();
-        
+
         MaterialLabel label = MaterialLabelsFactory.build();
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setFont(UIManager.getFont("Table.font"));
@@ -121,44 +118,22 @@ public class ProyectoDetailView extends CleanDetailCRUDDragDrop<ProyectoDomain> 
     }
 
     private void addActionsElements() {
-        this.addActionExtra(new AbstractAction("Ir a la carpeta", MaterialIcons.OPEN_IN_NEW) {
+        this.addActionExtra(new AbstractAction("Ir a la carpeta", KanbanModuleNavigator.ICON_FOLDER) {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Opener.from(getSelectedElement().getUrlLocal()).open();
-                } catch (Exception ex) {
-                    ExceptionHandler.handleException(ex);
-                }
+                KanbanSwingModule.proyectoUC.irACarpeta(getSelectedElement());
             }
         });
-        this.addActionExtra(new AbstractAction("Ir al repo online", MaterialIcons.OPEN_IN_BROWSER) {
+        this.addActionExtra(new AbstractAction("Ir al repo online", KanbanModuleNavigator.ICON_BROWSER) {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Browser.from(getSelectedElement().getUrlRepoOnline()).browse();
-                } catch (Exception ex) {
-                    ExceptionHandler.handleException(ex);
-                }
+                KanbanSwingModule.proyectoUC.irARepoOnline(getSelectedElement());
             }
         });
-        this.addActionExtra(new AbstractAction("Copiar url local", MaterialIcons.CONTENT_COPY) {
+        this.addActionExtra(new AbstractAction("Copiar url local", KanbanModuleNavigator.ICON_COPY) {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    ClipboardUtils.copy(getSelectedElement().getUrlLocal());
-                } catch (Exception ex) {
-                    ExceptionHandler.handleException(ex);
-                }
-            }
-        });
-        this.addActionExtra(new AbstractAction("Update Repo Online", MaterialIcons.VERTICAL_ALIGN_TOP) {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    //KanbanSwingModule.proyectoUC.updateRemote(getSelectedElement());
-                } catch (Exception ex) {
-                    ExceptionHandler.handleException(ex);
-                }
+                KanbanSwingModule.proyectoUC.copiarURLLocal(getSelectedElement());
             }
         });
     }
