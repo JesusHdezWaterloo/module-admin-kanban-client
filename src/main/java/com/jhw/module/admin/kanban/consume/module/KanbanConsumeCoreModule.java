@@ -3,6 +3,7 @@ package com.jhw.module.admin.kanban.consume.module;
 import com.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.jhw.module.admin.kanban.service.ResourceServiceImplementation;
 
 /**
  * Modulo de Kanban-consume-core.
@@ -17,14 +18,19 @@ public class KanbanConsumeCoreModule extends DefaultAbstractModule {
 
     public static KanbanConsumeCoreModule getInstance() {
         if (INSTANCE == null) {
-            throw new NullPointerException("El modulo de Kanban Consume-Core no se ha inicializado");
+            init();
         }
         return INSTANCE;
     }
 
-    public static KanbanConsumeCoreModule init() {
+    /**
+     * Es responsabilidad del init saber que tiene que inicializar
+     *
+     * @return
+     */
+    private static void init() {
         INSTANCE = new KanbanConsumeCoreModule();
-        return getInstance();
+        ResourceServiceImplementation.init();
     }
 
     @Override

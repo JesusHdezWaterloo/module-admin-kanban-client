@@ -6,13 +6,17 @@
 package com.jhw.module.admin.kanban.ui.kanban;
 
 import com.clean.core.app.services.ExceptionHandler;
+import com.google.common.collect.Lists;
 import com.jhw.module.admin.kanban.core.domain.ColumnaProyectVolatile;
 import com.jhw.module.admin.kanban.core.domain.MoveTarea;
 import com.jhw.module.admin.kanban.core.domain.TareaDomain;
 import com.jhw.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.jhw.module.admin.kanban.ui.tarea.TareaInputView;
 import com.jhw.swing.bundles.dnd.DropHandler;
+import com.jhw.swing.material.components.button.MaterialButtonIcon;
+import com.jhw.swing.material.components.button.MaterialButtonsFactory;
 import com.jhw.swing.material.components.container.MaterialContainersFactory;
+import com.jhw.swing.material.components.container.layout.HorizontalLayoutContainer;
 import com.jhw.swing.material.components.container.panel.*;
 import com.jhw.swing.material.components.labels.*;
 import com.jhw.swing.material.components.scrollpane.MaterialScrollFactory;
@@ -21,6 +25,7 @@ import com.jhw.swing.material.components.searchfield.MaterialSearchField;
 import com.jhw.swing.material.components.searchfield._MaterialSearchField;
 import com.jhw.swing.material.injection.MaterialSwingInjector;
 import com.jhw.swing.material.standards.MaterialColors;
+import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.prepared.button.MaterialButtonAddEdit;
 import com.jhw.swing.prepared.button.MaterialPreparedButtonsFactory;
@@ -53,6 +58,7 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
 
     private final ColumnaProyectVolatile colProy;
     private List<TareaDomain> tareas = new ArrayList<>();
+    private boolean ordenReverse = false;
 
     private DropTarget dropTarget;
     private DropHandler dropHandler;
@@ -93,6 +99,9 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
     public void update() {
         try {
             this.tareas = KanbanSwingModule.tareaUC.findByColumnaProyecto(colProy.lightweigth());
+            if (ordenReverse) {
+                this.tareas = Lists.reverse(tareas);
+            }
         } catch (Exception e) {
         }
         updateColumn();
@@ -122,6 +131,10 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
         header.setSearchActionListener((ActionEvent e) -> {
             updateColumn();
         });
+
+        header.addChangeOrderActionListener((ActionEvent e) -> {
+            changeOrder();
+        });
     }
 
     @Override
@@ -146,6 +159,11 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
     public void removeNotify() {
         super.removeNotify();
         dropTarget.removeDropTargetListener(dropHandler);
+    }
+
+    private void changeOrder() {
+        this.ordenReverse = !ordenReverse;
+        update();
     }
 
     private static class KanbanColumnHeader extends _PanelTransparent {
@@ -177,10 +195,17 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
             buttonAdd.setToolTipText("Agregar tarea en esta columna");
             buttonAdd.isCreated(true);
             buttonAdd.setText("");
+
             int w = (int) (2f * buttonAdd.getIcon().getIconWidth());
             buttonAdd.setPreferredSize(new Dimension(w, w - 5));//el menos para emparejar el tamaño por el border
-            back.add(buttonAdd, BorderLayout.EAST);
 
+            buttonChangeOrder = MaterialButtonsFactory.buildIconTransparent();
+            buttonChangeOrder.setIcon(MaterialIcons.SWAP_VERT);
+            buttonChangeOrder.setToolTipText("Cambiar el orden de las tareas");
+            buttonChangeOrder.setPreferredSize(new Dimension(w * 2 / 3, w * 2 / 3));//el menos para emparejar el tamaño por el border
+
+            back.add(buttonAdd, BorderLayout.EAST);
+            back.add(buttonChangeOrder, BorderLayout.WEST);
             this.add(back, BorderLayout.NORTH);
 
             this.add(searchField);
@@ -188,6 +213,7 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
 
         private MaterialLabel labelHeader;
         private MaterialButtonAddEdit buttonAdd;
+        private MaterialButtonIcon buttonChangeOrder;
         private MaterialSearchField searchField;
 
         public void setHeader(String text) {
@@ -204,6 +230,10 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
 
         public void setSearchActionListener(ActionListener searchAction) {
             searchField.setSearchActionListener(searchAction);
+        }
+
+        public void addChangeOrderActionListener(ActionListener searchAction) {
+            buttonChangeOrder.addActionListener(searchAction);
         }
     }
 }
