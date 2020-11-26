@@ -27,14 +27,10 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
     public final static TareaUseCaseConsume tareaUC;
 
     static {
-        KanbanConsumeCoreModule.init();
-
         columnaUC = KanbanConsumeCoreModule.getInstance().getImplementation(ColumnaUseCaseConsume.class);
         prioridadUC = KanbanConsumeCoreModule.getInstance().getImplementation(PrioridadUseCaseConsume.class);
         proyectoUC = KanbanConsumeCoreModule.getInstance().getImplementation(ProyectoUseCaseConsume.class);
         tareaUC = KanbanConsumeCoreModule.getInstance().getImplementation(TareaUseCaseConsume.class);
-
-        ResourceServiceImplementation.init();
     }
 
     private KanbanSwingModule() {
