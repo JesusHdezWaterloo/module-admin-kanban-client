@@ -16,7 +16,6 @@ import com.jhw.swing.bundles.dnd.DropHandler;
 import com.jhw.swing.material.components.button.MaterialButtonIcon;
 import com.jhw.swing.material.components.button.MaterialButtonsFactory;
 import com.jhw.swing.material.components.container.MaterialContainersFactory;
-import com.jhw.swing.material.components.container.layout.HorizontalLayoutContainer;
 import com.jhw.swing.material.components.container.panel.*;
 import com.jhw.swing.material.components.labels.*;
 import com.jhw.swing.material.components.scrollpane.MaterialScrollFactory;
@@ -31,6 +30,7 @@ import com.jhw.swing.prepared.button.MaterialButtonAddEdit;
 import com.jhw.swing.prepared.button.MaterialPreparedButtonsFactory;
 import com.jhw.utils.interfaces.Update;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -163,6 +163,7 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
 
     private void changeOrder() {
         this.ordenReverse = !ordenReverse;
+        header.changeOrderColor();
         update();
     }
 
@@ -174,6 +175,10 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
             columnHeader.setToolTipText(colProy.getColumna().getDescripcion());
             return columnHeader;
         }
+
+        private boolean ordenReverse = false;
+        private Color colorDeselected = MaterialColors.BLACK;
+        private Color colorSelected = MaterialColors.BLUEA_400;
 
         public KanbanColumnHeader() {
             initComponents();
@@ -234,6 +239,11 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
 
         public void addChangeOrderActionListener(ActionListener searchAction) {
             buttonChangeOrder.addActionListener(searchAction);
+        }
+
+        void changeOrderColor() {
+            this.ordenReverse = !ordenReverse;
+            buttonChangeOrder.setForeground(ordenReverse ? colorSelected : colorDeselected);
         }
     }
 }
