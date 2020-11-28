@@ -3,7 +3,7 @@ package com.jhw.module.admin.kanban.consume.module;
 import com.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.jhw.module.admin.kanban.service.ResourceServiceImplementation;
+import com.jhw.module.admin.kanban.service.ResourceServiceClientImplementation;
 
 /**
  * Modulo de Kanban-consume-core.
@@ -30,7 +30,7 @@ public class KanbanConsumeCoreModule extends DefaultAbstractModule {
      */
     private static void init() {
         INSTANCE = new KanbanConsumeCoreModule();
-        ResourceServiceImplementation.init();
+        ResourceServiceClientImplementation.init();
     }
 
     @Override
