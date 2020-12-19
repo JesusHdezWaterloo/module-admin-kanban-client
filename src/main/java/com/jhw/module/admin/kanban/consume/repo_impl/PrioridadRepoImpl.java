@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -23,14 +24,19 @@ import java.util.Map;
 public class PrioridadRepoImpl extends ConsumerRepoTemplate<PrioridadDomain> implements PrioridadUseCase {
 
     public PrioridadRepoImpl() {
-        super(RESTHandler.restTemplate(), PrioridadDomain.class, RESTHandler.urlActualREST() + PRIORIDAD_GENERAL_PATH);
+        super(PrioridadDomain.class, RESTHandler.urlActualREST() + PRIORIDAD_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
     public List<PrioridadDomain> findAll(String searchText) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH, searchText);
-        return RestTemplateUtils.getForList(template, urlGeneral + PRIORIDAD_FIND_ALL_SEARCH_PATH, map, PrioridadDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + PRIORIDAD_FIND_ALL_SEARCH_PATH, map, PrioridadDomain.class);
     }
 
 }

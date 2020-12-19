@@ -14,6 +14,7 @@ import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -22,7 +23,12 @@ import java.util.Map;
 public class TareaRepoImpl extends ConsumerRepoTemplate<TareaDomain> implements TareaUseCase {
 
     public TareaRepoImpl() {
-        super(RESTHandler.restTemplate(), TareaDomain.class, RESTHandler.urlActualREST() + TAREA_GENERAL_PATH);
+        super(TareaDomain.class, RESTHandler.urlActualREST() + TAREA_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
@@ -30,12 +36,12 @@ public class TareaRepoImpl extends ConsumerRepoTemplate<TareaDomain> implements 
         Map<String, Object> map = new HashMap<>();
         map.put(COLUMNA, colProy.idColumna);
         map.put(PROYECTO, colProy.idProyecto);
-        return RestTemplateUtils.getForList(template, urlGeneral + TAREA_FIND_BY_COL_PROY_PATH, map, TareaDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + TAREA_FIND_BY_COL_PROY_PATH, map, TareaDomain.class);
     }
 
     @Override
     public TareaDomain move(MoveTarea move) throws Exception {
-        return template.postForObject(urlGeneral + TAREA_MOVE_PATH, move, TareaDomain.class);
+        return template().postForObject(urlGeneral + TAREA_MOVE_PATH, move, TareaDomain.class);
     }
 
 }
