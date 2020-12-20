@@ -7,6 +7,7 @@ import com.clean.swing.app.dashboard.DashboardConstants;
 import com.clean.swing.utils.DashBoardComponent;
 import com.jhw.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.jhw.module.admin.kanban.consume.usecase_def.*;
+import com.jhw.module.admin.kanban.service.ResourceServiceClientImplementation;
 import com.jhw.module.admin.kanban.service.ResourceServiceImplementation;
 import com.jhw.swing.material.components.taskpane.CollapseMenu;
 import com.jhw.swing.models.utils.UpdateListener;
@@ -40,7 +41,10 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
 
     public static KanbanSwingModule init() {
         System.out.println("Iniciando 'Kanban'");
-
+        
+        ResourceServiceImplementation.init();//inicio el general
+        ResourceServiceClientImplementation.init();//inicio el mio
+        
         return new KanbanSwingModule();
     }
 
@@ -64,7 +68,7 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
     @Override
     public void update() {
         menu.clear();//limpia el menu
-        
+
         String lastView = dash.getSelectedViewName();
         dash.removeGroupView(KanbanModuleNavigator.GROUP);//limpia las vistas
 
@@ -76,7 +80,7 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
 
         //repinta el dashboard
         dash.format();
-        
+
         dash.showView(lastView);
     }
 }
