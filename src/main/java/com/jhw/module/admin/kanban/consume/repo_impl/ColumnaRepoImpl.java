@@ -10,6 +10,7 @@ import com.jhw.module.admin.kanban.core.domain.*;
 import com.jhw.module.admin.kanban.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -18,16 +19,21 @@ import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 public class ColumnaRepoImpl extends ConsumerRepoTemplate<ColumnaDomain> implements ColumnaUseCase {
 
     public ColumnaRepoImpl() {
-        super(RESTHandler.restTemplate(), ColumnaDomain.class, RESTHandler.urlActualREST() + COLUMMA_GENERAL_PATH);
+        super(ColumnaDomain.class, RESTHandler.urlActualREST() + COLUMMA_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
     public ColumnaDomain findFirst() throws Exception {
-        return template.getForObject(urlGeneral + COLUMNA_FIND_FIRST_PATH, ColumnaDomain.class);
+        return template().getForObject(urlGeneral + COLUMNA_FIND_FIRST_PATH, ColumnaDomain.class);
     }
 
     @Override
     public ColumnaDomain findLast() throws Exception {
-        return template.getForObject(urlGeneral + COLUMNA_FIND_LAST_PATH, ColumnaDomain.class);
+        return template().getForObject(urlGeneral + COLUMNA_FIND_LAST_PATH, ColumnaDomain.class);
     }
 }

@@ -10,6 +10,7 @@ import com.jhw.module.admin.kanban.core.domain.*;
 import com.jhw.module.admin.kanban.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -18,7 +19,12 @@ import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 public class ProyectoRepoImpl extends ConsumerRepoTemplate<ProyectoDomain> implements ProyectoUseCase {
 
     public ProyectoRepoImpl() {
-        super(RESTHandler.restTemplate(), ProyectoDomain.class, RESTHandler.urlActualREST() + PROYECTO_GENERAL_PATH);
+        super(ProyectoDomain.class, RESTHandler.urlActualREST() + PROYECTO_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
 }
