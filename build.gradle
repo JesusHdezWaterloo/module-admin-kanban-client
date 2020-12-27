@@ -35,7 +35,6 @@ dependencies {
     
     implementation project(':module-util-personalization')
     implementation project(':module-util-default_configuration')
-    implementation project(':module-util-licence')
     
     implementation project(':utils-export')
     implementation project(':utils-files')
