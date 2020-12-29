@@ -4,7 +4,7 @@ plugins {
 
 group = 'com.jhw.module.gestion'
 
-version = '2.3.0.SNAPSHOT.20201219'
+version = '2.4.0.SNAPSHOT.20201228'
 
 repositories {
     jcenter()
@@ -35,7 +35,6 @@ dependencies {
     
     implementation project(':module-util-personalization')
     implementation project(':module-util-default_configuration')
-    implementation project(':module-util-licence')
     
     implementation project(':utils-export')
     implementation project(':utils-files')

@@ -39,9 +39,6 @@ project(':swing-material-model').projectDir = "E:\\Trabajos\\Projects\\GIT Proje
 include ':module-util-default_configuration'
 project(':module-util-default_configuration').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-default_configuration" as File
 
-include ':module-util-licence'
-project(':module-util-licence').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-licence" as File
-
 include ':utils-export'
 project(':utils-export').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-export" as File
 

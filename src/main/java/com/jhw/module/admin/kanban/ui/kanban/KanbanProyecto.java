@@ -56,7 +56,6 @@ public class KanbanProyecto extends _PanelGradient implements Update {
         this.proyecto = proyecto;
         initComponents();
         addPropertyListeners();
-        update();
     }
 
     private void initComponents() {
