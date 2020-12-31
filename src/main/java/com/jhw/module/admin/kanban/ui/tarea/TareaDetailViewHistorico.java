@@ -1,6 +1,6 @@
 package com.jhw.module.admin.kanban.ui.tarea;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.admin.kanban.core.domain.TareaDomain;
 import com.jhw.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.jhw.module.admin.kanban.ui.module.KanbanSwingModule;

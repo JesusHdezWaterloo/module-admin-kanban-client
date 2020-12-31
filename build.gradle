@@ -21,7 +21,7 @@ dependencies {
     implementation project(':utils-core')
     implementation project(':utils-spring')
     
-    implementation project(':clean-core-full')
+    implementation project(':clean-core')
     implementation project(':clean-swing')
     
     implementation project(':swing-derivable_icons')

@@ -1,8 +1,8 @@
 package com.jhw.module.admin.kanban.ui.module;
 
-import com.clean.core.app.services.ExceptionHandler;
-import com.clean.core.app.services.NavigationService;
-import com.clean.swing.utils.DashBoardComponent;
+import com.root101.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.NavigationService;
+import com.root101.clean.swing.utils.DashBoardComponent;
 import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
 import com.jhw.module.admin.kanban.ui.columna.ColumnaDetailView;
 import com.jhw.module.admin.kanban.ui.kanban.KanbanProyecto;

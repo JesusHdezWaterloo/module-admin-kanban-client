@@ -5,7 +5,7 @@
  */
 package com.jhw.module.admin.kanban.ui.kanban;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.admin.kanban.core.domain.ColumnaDomain;
 import com.jhw.module.admin.kanban.core.domain.ColumnaProyectVolatile;
 import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
@@ -18,7 +18,7 @@ import com.jhw.swing.material.components.labels.MaterialLabel;
 import com.jhw.swing.material.components.labels.MaterialLabelsFactory;
 import com.jhw.swing.material.standards.MaterialFontRoboto;
 import com.jhw.swing.models.utils.UpdateListener;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;

@@ -8,7 +8,7 @@ import com.jhw.swing.material.injection.MaterialSwingInjector;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.util.interfaces.BindableComponent;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 

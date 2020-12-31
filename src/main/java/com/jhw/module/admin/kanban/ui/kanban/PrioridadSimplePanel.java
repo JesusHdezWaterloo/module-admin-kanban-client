@@ -12,7 +12,7 @@ import com.jhw.swing.material.components.labels.MaterialLabelsFactory;
 import com.jhw.swing.material.components.labels._MaterialLabel;
 import com.jhw.swing.util.Utils;
 import com.jhw.swing.util.interfaces.BindableComponent;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 

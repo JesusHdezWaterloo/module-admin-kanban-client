@@ -5,10 +5,10 @@
  */
 package com.jhw.module.admin.kanban.consume.usecase_impl;
 
-import com.clean.core.app.services.ExceptionHandler;
-import com.clean.core.app.services.Notification;
-import com.clean.core.app.services.NotificationsGeneralType;
-import com.clean.core.app.usecase.*;
+import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
+import com.root101.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.NotificationHandler;
+import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.jhw.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.jhw.module.admin.kanban.consume.repo_impl.*;
 import com.jhw.module.admin.kanban.consume.usecase_def.*;
@@ -93,7 +93,7 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
 
         //rama actual
         String actualBranch = localRepo.getFullBranch();
-        Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
+        NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                 "Rama actual: " + actualBranch);
 
         //git para hacer comandos
@@ -109,16 +109,16 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
         List<Ref> branches = git.branchList().call();
         for (Ref b : branches) {
 
-            Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
+            NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                     "Cambiando a rama: " + b.getName());
             git.checkout().setName(b.getName()).call();
 
-            Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
+            NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                     "Pull para actualizar local");
             System.out.println();
             git.pull().call();
 
-            Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
+            NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                     "Push para actualizar remote");
             git.push().setCredentialsProvider(
                     new UsernamePasswordCredentialsProvider(
@@ -144,10 +144,10 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
             ).call();
         }*/
         //regreso a la rama original
-        Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
+        NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                 "Checkout para la rama original: " + actualBranch);
         git.checkout().setName(actualBranch).call();
-        Notification.showNotification(NotificationsGeneralType.NOTIFICATION_SUCCESS,
+        NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SUCCESS,
                 "Actualizadas todas las ramas con el/los repos online");
     }
 }

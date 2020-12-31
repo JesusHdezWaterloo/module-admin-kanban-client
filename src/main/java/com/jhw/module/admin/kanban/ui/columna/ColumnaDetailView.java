@@ -1,6 +1,6 @@
 package com.jhw.module.admin.kanban.ui.columna;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.admin.kanban.core.domain.ColumnaDomain;
 import com.jhw.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.jhw.module.admin.kanban.ui.module.KanbanSwingModule;

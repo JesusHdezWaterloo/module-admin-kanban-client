@@ -21,7 +21,7 @@ import com.jhw.swing.material.components.labels.MaterialLabelsFactory;
 import com.jhw.swing.material.standards.MaterialFontRoboto;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.util.interfaces.BindableComponent;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

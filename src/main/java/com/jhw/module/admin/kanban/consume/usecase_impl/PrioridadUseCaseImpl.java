@@ -5,7 +5,7 @@
  */
 package com.jhw.module.admin.kanban.consume.usecase_impl;
 
-import com.clean.core.app.usecase.*;
+import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
 import com.jhw.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.jhw.module.admin.kanban.consume.repo_impl.*;
 import com.jhw.module.admin.kanban.consume.usecase_def.*;

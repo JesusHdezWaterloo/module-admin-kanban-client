@@ -5,7 +5,7 @@
  */
 package com.jhw.module.admin.kanban.ui.prioridad;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.admin.kanban.core.domain.PrioridadDomain;
 import com.jhw.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.jhw.module.admin.kanban.ui.module.KanbanSwingModule;
@@ -15,7 +15,7 @@ import com.jhw.swing.material.standards.MaterialShadow;
 import com.jhw.swing.models.detail.HeaderDetailPanel;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.models.utils.UpdateListener;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
