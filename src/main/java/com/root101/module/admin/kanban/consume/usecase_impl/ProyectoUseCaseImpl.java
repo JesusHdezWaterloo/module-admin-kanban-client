@@ -25,6 +25,8 @@ import com.jhw.module.admin.kanban.core.domain.*;
 import com.jhw.swing.util.ClipboardUtils;
 import com.jhw.utils.file.Browser;
 import com.jhw.utils.file.Opener;
+import com.root101.module.admin.kanban.consume.repo_impl.ProyectoRepoImpl;
+import com.root101.module.admin.kanban.consume.usecase_def.ProyectoUseCaseConsume;
 import java.util.List;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;

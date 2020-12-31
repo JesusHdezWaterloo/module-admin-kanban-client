@@ -19,6 +19,8 @@ package com.root101.module.admin.kanban.consume.usecase_impl;
 import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.jhw.module.admin.kanban.core.domain.*;
+import com.root101.module.admin.kanban.consume.repo_impl.PrioridadRepoImpl;
+import com.root101.module.admin.kanban.consume.usecase_def.PrioridadUseCaseConsume;
 import java.util.List;
 
 /**

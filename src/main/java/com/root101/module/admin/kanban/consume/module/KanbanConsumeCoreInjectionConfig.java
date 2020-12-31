@@ -19,6 +19,8 @@ package com.root101.module.admin.kanban.consume.module;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import com.jhw.module.admin.kanban.core.usecase_def.*;
+import com.root101.module.admin.kanban.consume.usecase_def.*;
+import com.root101.module.admin.kanban.consume.usecase_impl.*;
 
 /**
  * 
