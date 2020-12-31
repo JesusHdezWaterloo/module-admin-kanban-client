@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.gestion'
+group = 'com.root101.module.admin'
 
 version = '2.4.0.SNAPSHOT.20201228'
 
