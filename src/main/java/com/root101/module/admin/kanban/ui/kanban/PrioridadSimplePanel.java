@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.kanban;
 
-import com.jhw.module.admin.kanban.core.domain.PrioridadDomain;
+import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
 import com.jhw.swing.material.components.container.panel._MaterialPanelComponent;
 import com.jhw.swing.material.components.labels.MaterialLabel;
 import com.jhw.swing.material.components.labels._MaterialLabel;

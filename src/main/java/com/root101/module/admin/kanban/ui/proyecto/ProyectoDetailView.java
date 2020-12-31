@@ -17,7 +17,7 @@
 package com.root101.module.admin.kanban.ui.proyecto;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
-import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
+import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.jhw.swing.material.components.container.MaterialContainersFactory;

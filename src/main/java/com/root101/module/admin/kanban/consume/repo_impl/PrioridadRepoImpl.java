@@ -16,9 +16,9 @@
  */
 package com.root101.module.admin.kanban.consume.repo_impl;
 
-import static com.jhw.module.admin.kanban.core.ModuleAdminKanbanConstants.*;
-import com.jhw.module.admin.kanban.core.domain.*;
-import com.jhw.module.admin.kanban.core.usecase_def.*;
+import com.root101.module.admin.kanban.core.usecase_def.PrioridadUseCase;
+import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
+import static com.root101.module.admin.kanban.core.ModuleAdminKanbanConstants.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 import com.jhw.utils.spring.client.RestTemplateUtils;

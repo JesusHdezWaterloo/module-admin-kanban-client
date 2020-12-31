@@ -16,12 +16,12 @@
  */
 package com.root101.module.admin.kanban.consume.usecase_impl;
 
+import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
 import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.clean.core.app.services.NotificationHandler;
 import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
-import com.jhw.module.admin.kanban.core.domain.*;
 import com.jhw.swing.util.ClipboardUtils;
 import com.jhw.utils.file.Browser;
 import com.jhw.utils.file.Opener;

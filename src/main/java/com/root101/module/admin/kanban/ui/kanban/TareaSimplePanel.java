@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.kanban;
 
-import com.jhw.module.admin.kanban.core.domain.TareaDomain;
+import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.tarea.TareaInputView;
 import com.jhw.module.util.personalization.core.domain.Personalization;
 import com.jhw.module.util.personalization.services.PersonalizationHandler;

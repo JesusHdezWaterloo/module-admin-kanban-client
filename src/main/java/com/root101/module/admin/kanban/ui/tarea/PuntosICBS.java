@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.tarea;
 
-import com.jhw.module.admin.kanban.core.utils.FibonacciNumberUtils;
+import com.root101.module.admin.kanban.core.utils.FibonacciNumberUtils;
 import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
 import com.jhw.swing.models.input.panels.ModelPanel;
 import java.util.Arrays;

@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.prioridad;
 
-import com.jhw.module.admin.kanban.core.domain.PrioridadDomain;
+import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.jhw.swing.material.components.colorchooser.MaterialColorChooserFactory;
 import com.jhw.swing.material.components.colorchooser.MaterialColorChooserIcon;

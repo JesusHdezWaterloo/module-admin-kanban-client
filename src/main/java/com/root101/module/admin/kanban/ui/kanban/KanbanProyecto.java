@@ -17,10 +17,10 @@
 package com.root101.module.admin.kanban.ui.kanban;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
-import com.jhw.module.admin.kanban.core.domain.ColumnaDomain;
-import com.jhw.module.admin.kanban.core.domain.ColumnaProyectVolatile;
-import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
-import com.jhw.module.admin.kanban.core.domain.TareaDomain;
+import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
+import com.root101.module.admin.kanban.core.domain.ColumnaProyectVolatile;
+import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
+import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.jhw.swing.material.components.container.MaterialContainersFactory;
 import com.jhw.swing.material.components.container.panel._PanelGradient;

@@ -16,8 +16,8 @@
  */
 package com.root101.module.admin.kanban.ui.tarea;
 
-import com.jhw.module.admin.kanban.core.domain.ColumnaProyectVolatile;
-import com.jhw.module.admin.kanban.core.domain.TareaDomain;
+import com.root101.module.admin.kanban.core.domain.ColumnaProyectVolatile;
+import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.columna.ColumnaICBS;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.root101.module.admin.kanban.ui.prioridad.PrioridadICBSPopup;

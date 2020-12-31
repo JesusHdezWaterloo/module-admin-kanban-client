@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.proyecto;
 
-import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
+import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.jhw.swing.models.input.icbs.InputComboBoxSelection;

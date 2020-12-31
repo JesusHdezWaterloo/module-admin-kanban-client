@@ -19,7 +19,7 @@ package com.root101.module.admin.kanban.ui.module;
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.clean.core.app.services.NavigationService;
 import com.root101.clean.swing.utils.DashBoardComponent;
-import com.jhw.module.admin.kanban.core.domain.ProyectoDomain;
+import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
 import com.root101.module.admin.kanban.ui.columna.ColumnaDetailView;
 import com.root101.module.admin.kanban.ui.kanban.KanbanProyecto;
 import com.root101.module.admin.kanban.ui.prioridad.PrioridadDetailMainPanel;

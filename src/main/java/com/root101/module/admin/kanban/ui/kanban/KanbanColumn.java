@@ -18,9 +18,9 @@ package com.root101.module.admin.kanban.ui.kanban;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.google.common.collect.Lists;
-import com.jhw.module.admin.kanban.core.domain.ColumnaProyectVolatile;
-import com.jhw.module.admin.kanban.core.domain.MoveTarea;
-import com.jhw.module.admin.kanban.core.domain.TareaDomain;
+import com.root101.module.admin.kanban.core.domain.ColumnaProyectVolatile;
+import com.root101.module.admin.kanban.core.domain.MoveTarea;
+import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.root101.module.admin.kanban.ui.tarea.TareaInputView;
 import com.jhw.swing.bundles.dnd.DropHandler;

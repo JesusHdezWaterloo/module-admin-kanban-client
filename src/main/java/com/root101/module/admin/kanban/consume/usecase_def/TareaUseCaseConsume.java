@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.consume.usecase_def;
 
-import com.jhw.module.admin.kanban.core.usecase_def.*;
+import com.root101.module.admin.kanban.core.usecase_def.TareaUseCase;
 
 /**
  * 

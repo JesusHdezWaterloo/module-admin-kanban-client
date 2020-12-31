@@ -23,7 +23,7 @@ import com.root101.clean.swing.app.dashboard.DashboardConstants;
 import com.root101.clean.swing.utils.DashBoardComponent;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
 import com.root101.module.admin.kanban.service.ResourceServiceClientImplementation;
-import com.jhw.module.admin.kanban.service.ResourceServiceImplementation;
+import com.root101.module.admin.kanban.service.ResourceServiceImplementation;
 import com.jhw.swing.material.components.taskpane.CollapseMenu;
 import com.jhw.swing.models.utils.UpdateListener;
 import com.root101.module.admin.kanban.consume.usecase_def.*;

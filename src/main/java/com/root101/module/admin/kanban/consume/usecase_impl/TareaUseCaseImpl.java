@@ -16,9 +16,11 @@
  */
 package com.root101.module.admin.kanban.consume.usecase_impl;
 
+import com.root101.module.admin.kanban.core.domain.TareaDomain;
+import com.root101.module.admin.kanban.core.domain.ColumnaProyectVolatile;
+import com.root101.module.admin.kanban.core.domain.MoveTarea;
 import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
-import com.jhw.module.admin.kanban.core.domain.*;
 import com.root101.module.admin.kanban.consume.repo_impl.TareaRepoImpl;
 import com.root101.module.admin.kanban.consume.usecase_def.TareaUseCaseConsume;
 import java.util.List;

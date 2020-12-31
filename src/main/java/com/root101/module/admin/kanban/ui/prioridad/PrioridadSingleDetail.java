@@ -16,7 +16,7 @@
  */
 package com.root101.module.admin.kanban.ui.prioridad;
 
-import com.jhw.module.admin.kanban.core.domain.PrioridadDomain;
+import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
 import com.jhw.swing.material.components.button._MaterialButton;
 import com.jhw.swing.material.injection.Background_Force_Foreground;
 import com.jhw.swing.material.injection.Foreground_Force_Icon;

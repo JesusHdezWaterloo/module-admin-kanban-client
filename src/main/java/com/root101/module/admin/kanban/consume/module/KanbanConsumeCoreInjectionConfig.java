@@ -16,9 +16,12 @@
  */
 package com.root101.module.admin.kanban.consume.module;
 
+import com.root101.module.admin.kanban.core.usecase_def.PrioridadUseCase;
+import com.root101.module.admin.kanban.core.usecase_def.ProyectoUseCase;
+import com.root101.module.admin.kanban.core.usecase_def.ColumnaUseCase;
+import com.root101.module.admin.kanban.core.usecase_def.TareaUseCase;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
-import com.jhw.module.admin.kanban.core.usecase_def.*;
 import com.root101.module.admin.kanban.consume.usecase_def.*;
 import com.root101.module.admin.kanban.consume.usecase_impl.*;
 
