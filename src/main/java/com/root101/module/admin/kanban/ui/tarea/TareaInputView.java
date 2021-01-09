@@ -22,12 +22,12 @@ import com.root101.module.admin.kanban.ui.columna.ColumnaICBS;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.root101.module.admin.kanban.ui.prioridad.PrioridadICBSPopup;
 import com.root101.module.admin.kanban.ui.proyecto.ProyectoICBS;
-import com.jhw.swing.material.components.container.layout.*;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.material.components.textfield.*;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.container.layout.*;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.material.components.textfield.*;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
 import java.util.Map;
 
 /**

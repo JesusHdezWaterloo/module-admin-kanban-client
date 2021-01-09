@@ -19,12 +19,12 @@ package com.root101.module.admin.kanban.ui.columna;
 import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

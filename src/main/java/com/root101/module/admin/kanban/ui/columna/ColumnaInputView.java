@@ -18,17 +18,17 @@ package com.root101.module.admin.kanban.ui.columna;
 
 import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.*;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.*;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import java.util.Map;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */
@@ -55,11 +55,11 @@ public class ColumnaInputView extends CleanCRUDInputView<ColumnaDomain> {
         textFieldNombre.setHint("Nombre de la columna");
         textFieldNombre.setLabel("Columna");
         textFieldNombre.setIcon(MaterialIcons.PRIORITY_HIGH);
-        
+
         textFieldPosicion = MaterialTextFactory.build();
         textFieldPosicion.setHint("Posición de la columna");
         textFieldPosicion.setLabel("Posición");
-        
+
         textAreaDescripcion = MaterialPreparedTextAreaFactory.buildDescripcion();
 
         VerticalLayoutContainer.builder vlc = VerticalLayoutContainer.builder();

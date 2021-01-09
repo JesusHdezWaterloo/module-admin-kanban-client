@@ -18,16 +18,16 @@ package com.root101.module.admin.kanban.ui.prioridad;
 
 import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.jhw.swing.material.components.colorchooser.MaterialColorChooserFactory;
-import com.jhw.swing.material.components.colorchooser.MaterialColorChooserIcon;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
-import com.jhw.swing.prepared.textfield.MaterialPreparedTextFactory;
+import com.root101.swing.material.components.colorchooser.MaterialColorChooserFactory;
+import com.root101.swing.material.components.colorchooser.MaterialColorChooserIcon;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.prepared.textfield.MaterialPreparedTextFactory;
 import java.awt.Color;
 import java.util.Map;
 

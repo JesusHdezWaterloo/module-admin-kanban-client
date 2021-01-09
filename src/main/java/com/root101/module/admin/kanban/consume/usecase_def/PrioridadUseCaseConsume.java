@@ -19,7 +19,7 @@ package com.root101.module.admin.kanban.consume.usecase_def;
 import com.root101.module.admin.kanban.core.usecase_def.PrioridadUseCase;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

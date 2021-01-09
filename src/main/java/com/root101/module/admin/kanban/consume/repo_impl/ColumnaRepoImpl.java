@@ -19,12 +19,12 @@ package com.root101.module.admin.kanban.consume.repo_impl;
 import com.root101.module.admin.kanban.core.usecase_def.ColumnaUseCase;
 import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
 import static com.root101.module.admin.kanban.rest.ModuleAdminKanbanRESTConstants.*;
-import com.jhw.module.util.rest_config.services.RESTHandler;
-import com.jhw.utils.spring.client.ConsumerRepoTemplate;
+import com.root101.module.util.rest_config.services.RESTHandler;
+import com.root101.spring.client.ConsumerRepoTemplate;
 import org.springframework.web.client.RestOperations;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

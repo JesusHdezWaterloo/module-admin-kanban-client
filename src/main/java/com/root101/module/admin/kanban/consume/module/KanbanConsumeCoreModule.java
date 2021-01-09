@@ -22,7 +22,7 @@ import com.google.inject.Injector;
 import com.root101.module.admin.kanban.service.ResourceServiceClientImplementation;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */
