@@ -20,9 +20,9 @@ import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.jhw.swing.material.components.table.Column;
-import com.jhw.swing.models.clean.CleanDetailCRUDDragDrop;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.material.components.table.Column;
+import com.root101.swing.models.clean.CleanDetailCRUDDragDrop;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -105,7 +105,7 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
     }
 
     private void addActionsElements() {
-        
+
     }
 
 }

@@ -16,8 +16,8 @@
  */
 package com.root101.module.admin.kanban.ui.utils;
 
-import com.jhw.swing.derivable_icons.DerivableIcon;
-import static com.jhw.swing.material.standards.MaterialIcons.loadSVG;
+import com.root101.swing.derivable_icons.DerivableIcon;
+import static com.root101.swing.material.standards.MaterialIcons.loadSVG;
 
 /**
  *

@@ -23,7 +23,7 @@ import com.root101.module.admin.kanban.consume.repo_impl.ColumnaRepoImpl;
 import com.root101.module.admin.kanban.consume.usecase_def.ColumnaUseCaseConsume;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */
