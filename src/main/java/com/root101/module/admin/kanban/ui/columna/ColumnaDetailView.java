@@ -20,12 +20,12 @@ import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.jhw.swing.models.detail._MaterialPanelDetail;
-import com.jhw.swing.material.components.table.Column;
-import com.jhw.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.models.detail._MaterialPanelDetail;
+import com.root101.swing.material.components.table.Column;
+import com.root101.swing.models.input.dialogs.DialogModelInput;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

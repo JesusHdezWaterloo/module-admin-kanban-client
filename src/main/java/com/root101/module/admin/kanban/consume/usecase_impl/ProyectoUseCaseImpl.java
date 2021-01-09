@@ -22,9 +22,9 @@ import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.clean.core.app.services.NotificationHandler;
 import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
-import com.jhw.swing.util.ClipboardUtils;
-import com.jhw.utils.file.Browser;
-import com.jhw.utils.file.Opener;
+import com.root101.swing.util.ClipboardUtils;
+import com.root101.utils.file.Browser;
+import com.root101.utils.file.Opener;
 import com.root101.module.admin.kanban.consume.repo_impl.ProyectoRepoImpl;
 import com.root101.module.admin.kanban.consume.usecase_def.ProyectoUseCaseConsume;
 import java.util.List;
@@ -36,7 +36,7 @@ import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 /**
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

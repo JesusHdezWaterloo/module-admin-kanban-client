@@ -23,22 +23,22 @@ import com.root101.module.admin.kanban.core.domain.MoveTarea;
 import com.root101.module.admin.kanban.core.domain.TareaDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.root101.module.admin.kanban.ui.tarea.TareaInputView;
-import com.jhw.swing.bundles.dnd.DropHandler;
-import com.jhw.swing.material.components.button.MaterialButtonIcon;
-import com.jhw.swing.material.components.button.MaterialButtonsFactory;
-import com.jhw.swing.material.components.container.MaterialContainersFactory;
-import com.jhw.swing.material.components.container.panel.*;
-import com.jhw.swing.material.components.labels.*;
-import com.jhw.swing.material.components.scrollpane.MaterialScrollFactory;
-import com.jhw.swing.material.components.scrollpane.MaterialScrollPane;
-import com.jhw.swing.material.components.searchfield.MaterialSearchField;
-import com.jhw.swing.material.components.searchfield._MaterialSearchField;
-import com.jhw.swing.material.injection.MaterialSwingInjector;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.models.input.dialogs.DialogModelInput;
-import com.jhw.swing.prepared.button.MaterialButtonAddEdit;
-import com.jhw.swing.prepared.button.MaterialPreparedButtonsFactory;
+import com.root101.swing.bundles.dnd.DropHandler;
+import com.root101.swing.material.components.button.MaterialButtonIcon;
+import com.root101.swing.material.components.button.MaterialButtonsFactory;
+import com.root101.swing.material.components.container.MaterialContainersFactory;
+import com.root101.swing.material.components.container.panel.*;
+import com.root101.swing.material.components.labels.*;
+import com.root101.swing.material.components.scrollpane.MaterialScrollFactory;
+import com.root101.swing.material.components.scrollpane.MaterialScrollPane;
+import com.root101.swing.material.components.searchfield.MaterialSearchField;
+import com.root101.swing.material.components.searchfield._MaterialSearchField;
+import com.root101.swing.material.injection.MaterialSwingInjector;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.prepared.button.MaterialButtonAddEdit;
+import com.root101.swing.prepared.button.MaterialPreparedButtonsFactory;
 import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -120,20 +120,16 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
     }
 
     private void updateColumn() {
-        try {
-            //no se puede usar un layout xq usan mig, y se tufa con el DnD
-            panelTareas.removeAll();
-            JPanel inner = MaterialContainersFactory.buildPanelTransparent();
-            inner.setLayout(new GridLayout(tareas.size(), 1));
-            for (TareaDomain tarea : tareas) {
-                if (tarea.test(header.getSearchText())) {
-                    inner.add(TareaSimplePanel.from(tarea));
-                }
+        //no se puede usar un layout xq usan mig, y se tufa con el DnD
+        panelTareas.removeAll();
+        JPanel inner = MaterialContainersFactory.buildPanelTransparent();
+        inner.setLayout(new GridLayout(tareas.size(), 1));
+        for (TareaDomain tarea : tareas) {
+            if (tarea.test(header.getSearchText())) {
+                inner.add(TareaSimplePanel.from(tarea));
             }
-            panelTareas.add(inner, BorderLayout.NORTH);
-        } catch (Exception e) {
-            ExceptionHandler.handleException(e);
         }
+        panelTareas.add(inner, BorderLayout.NORTH);
     }
 
     private void addListeners() {

@@ -26,8 +26,8 @@ import com.root101.module.admin.kanban.ui.prioridad.PrioridadDetailMainPanel;
 import com.root101.module.admin.kanban.ui.proyecto.ProyectoDetailView;
 import com.root101.module.admin.kanban.ui.tarea.TareaDetailViewHistorico;
 import com.root101.module.admin.kanban.ui.utils.KanbanIcons;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.derivable_icons.DerivableIcon;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.derivable_icons.DerivableIcon;
 import java.util.ArrayList;
 import java.util.List;
 
