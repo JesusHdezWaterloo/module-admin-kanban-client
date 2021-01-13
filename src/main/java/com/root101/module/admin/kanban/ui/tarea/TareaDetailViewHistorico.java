@@ -96,7 +96,7 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
 
     @Override
     protected TareaDomain deleteAction(TareaDomain obj) {
-            return KanbanSwingModule.tareaUC.destroy(obj);
+        return KanbanSwingModule.tareaUC.destroy(obj);
     }
 
     private void addActionsElements() {

@@ -116,7 +116,7 @@ public class PrioridadDetailMainPanel extends _MaterialPanel implements Update {
 
     @Override
     public void update() {
-            rellenarCuentas(KanbanSwingModule.prioridadUC.findAll(getSearchText()));
+        rellenarCuentas(KanbanSwingModule.prioridadUC.findAll(getSearchText()));
     }
 
     private void addPropertyListeners() {
