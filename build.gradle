@@ -4,7 +4,7 @@ plugins {
 
 group = 'com.root101.module.admin'
 
-version = '3.0.0.SNAPSHOT.20210108'
+version = '3.0.1.SNAPSHOT.20210113'
 
 repositories {
     jcenter()
