@@ -71,45 +71,40 @@ public class KanbanModuleNavigator implements NavigationService {
 
     public List<DashBoardComponent> createComponents() {
         List<DashBoardComponent> list = new ArrayList<>();
-        try {
-            for (ProyectoDomain proyectoDomain : KanbanSwingModule.proyectoUC.findAll()) {
-                if (proyectoDomain.isKanban()) {
-                    list.add(DashBoardComponent.from(
-                            proyectoDomain.nameFixed(),
-                            proyectoDomain.getNombreProyecto(),
-                            ICON_KANBAN_PROJECT,
-                            KanbanModuleNavigator.GROUP + "." + proyectoDomain.getNombreProyecto(),
-                            KanbanProyecto.from(proyectoDomain)));
-                }
+        for (ProyectoDomain proyectoDomain : KanbanSwingModule.proyectoUC.findAll()) {
+            if (proyectoDomain.isKanban()) {
+                list.add(DashBoardComponent.from(
+                        proyectoDomain.nameFixed(),
+                        proyectoDomain.getNombreProyecto(),
+                        ICON_KANBAN_PROJECT,
+                        KanbanModuleNavigator.GROUP + "." + proyectoDomain.getNombreProyecto(),
+                        KanbanProyecto.from(proyectoDomain)));
             }
-
-            list.add(DashBoardComponent.from(
-                    KanbanModuleNavigator.PROYECTO,
-                    KanbanModuleNavigator.ICON_PROYECTO,
-                    KanbanModuleNavigator.NAV_PROYECTO,
-                    new ProyectoDetailView()));
-
-            list.add(DashBoardComponent.from(
-                    KanbanModuleNavigator.COLUMNA,
-                    KanbanModuleNavigator.ICON_COLUMNA,
-                    KanbanModuleNavigator.NAV_COLUMNA,
-                    new ColumnaDetailView()));
-
-            list.add(DashBoardComponent.from(
-                    KanbanModuleNavigator.TAREA,
-                    KanbanModuleNavigator.ICON_TAREA,
-                    KanbanModuleNavigator.NAV_TAREA,
-                    new TareaDetailViewHistorico()));
-
-            list.add(DashBoardComponent.from(
-                    KanbanModuleNavigator.PRIORIDAD,
-                    KanbanModuleNavigator.ICON_PRIORIDAD,
-                    KanbanModuleNavigator.NAV_PRIORIDAD,
-                    new PrioridadDetailMainPanel()));
-
-        } catch (Exception e) {
-            ExceptionHandler.handleException(e);
         }
+
+        list.add(DashBoardComponent.from(
+                KanbanModuleNavigator.PROYECTO,
+                KanbanModuleNavigator.ICON_PROYECTO,
+                KanbanModuleNavigator.NAV_PROYECTO,
+                new ProyectoDetailView()));
+
+        list.add(DashBoardComponent.from(
+                KanbanModuleNavigator.COLUMNA,
+                KanbanModuleNavigator.ICON_COLUMNA,
+                KanbanModuleNavigator.NAV_COLUMNA,
+                new ColumnaDetailView()));
+
+        list.add(DashBoardComponent.from(
+                KanbanModuleNavigator.TAREA,
+                KanbanModuleNavigator.ICON_TAREA,
+                KanbanModuleNavigator.NAV_TAREA,
+                new TareaDetailViewHistorico()));
+
+        list.add(DashBoardComponent.from(
+                KanbanModuleNavigator.PRIORIDAD,
+                KanbanModuleNavigator.ICON_PRIORIDAD,
+                KanbanModuleNavigator.NAV_PRIORIDAD,
+                new PrioridadDetailMainPanel()));
         return list;
     }
 }

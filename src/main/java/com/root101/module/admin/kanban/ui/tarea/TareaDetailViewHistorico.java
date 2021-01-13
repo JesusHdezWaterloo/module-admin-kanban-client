@@ -63,7 +63,7 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
     }
 
     @Override
-    protected List<TareaDomain> getListUpdate() throws Exception {
+    protected List<TareaDomain> getListUpdate() throws RuntimeException {
         return KanbanSwingModule.tareaUC.findAll();
     }
 
@@ -96,12 +96,7 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
 
     @Override
     protected TareaDomain deleteAction(TareaDomain obj) {
-        try {
-            return KanbanSwingModule.tareaUC.destroy(obj);
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
-        return null;
+        return KanbanSwingModule.tareaUC.destroy(obj);
     }
 
     private void addActionsElements() {

@@ -58,24 +58,19 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
             Git git = new Git(localRepo);
             return !git.remoteList().call().isEmpty();
         } catch (Exception e) {
+            return false;
         }
-
-        return false;
     }
 
     @Override
     public void irACarpeta(ProyectoDomain proyecto) {
-        try {
-            Opener.from(proyecto.getUrlLocal()).open();
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
+        Opener.from(proyecto.getUrlLocal()).open();
     }
 
     @Override
     public void irARepoOnline(ProyectoDomain proyecto) {
         try {
-            Browser.from(proyecto.getUrlRepoOnline()).browse();
+            Browser.from(proyecto.getUrlRepoOnline()).browse();//crear la url puede dar error
         } catch (Exception ex) {
             ExceptionHandler.handleException(ex);
         }
@@ -83,25 +78,21 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
 
     @Override
     public void copiarURLLocal(ProyectoDomain proyecto) {
-        try {
-            ClipboardUtils.copy(proyecto.getUrlLocal());
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
+        ClipboardUtils.copy(proyecto.getUrlLocal());
     }
 
     /**
      * No funciona, no se ha echo la integracion con git
      *
      * @param proyecto
-     * @throws Exception
+     * @throws RuntimeException
      * @deprecated
      */
     @Override
     @Deprecated
-    public void updateRemote(ProyectoDomain proyecto) throws Exception {
+    public void updateRemote(ProyectoDomain proyecto) throws RuntimeException {
         //creo el repo, con el .git detras
-        Repository localRepo = new FileRepository(proyecto.getUrlLocal() + "\\.git");
+        /*Repository localRepo = new FileRepository(proyecto.getUrlLocal() + "\\.git");
 
         //rama actual
         String actualBranch = localRepo.getFullBranch();
@@ -154,12 +145,12 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
                             "A123b456**"
                     )
             ).call();
-        }*/
+        }
         //regreso a la rama original
         NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                 "Checkout para la rama original: " + actualBranch);
         git.checkout().setName(actualBranch).call();
         NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SUCCESS,
-                "Actualizadas todas las ramas con el/los repos online");
+                "Actualizadas todas las ramas con el/los repos online");*/
     }
 }

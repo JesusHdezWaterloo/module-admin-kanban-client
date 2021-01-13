@@ -36,12 +36,12 @@ public class ColumnaUseCaseImpl extends DefaultCRUDUseCase<ColumnaDomain> implem
     }
 
     @Override
-    public ColumnaDomain findFirst() throws Exception {
+    public ColumnaDomain findFirst() throws RuntimeException {
         return repoUC.findFirst();
     }
 
     @Override
-    public ColumnaDomain findLast() throws Exception {
+    public ColumnaDomain findLast() throws RuntimeException {
         return repoUC.findLast();
     }
 

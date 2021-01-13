@@ -85,21 +85,17 @@ public class KanbanProyecto extends _PanelGradient implements Update {
     }
 
     private void updateColumns() {
-        try {
-            panelColumnas.removeAll();//quito todo
+        panelColumnas.removeAll();//quito todo
 
-            //busco las columnas
-            List<ColumnaDomain> columnas = KanbanSwingModule.columnaUC.findAll();
+        //busco las columnas
+        List<ColumnaDomain> columnas = KanbanSwingModule.columnaUC.findAll();
 
-            //pongo el layout en dependencia de las columnas
-            panelColumnas.setLayout(new GridLayout(1, columnas.size()));
+        //pongo el layout en dependencia de las columnas
+        panelColumnas.setLayout(new GridLayout(1, columnas.size()));
 
-            //relleno las columnas
-            for (ColumnaDomain c : columnas) {
-                panelColumnas.add(KanbanColumn.from(new ColumnaProyectVolatile(proyecto, c)));
-            }
-        } catch (Exception e) {
-            ExceptionHandler.handleException(e);
+        //relleno las columnas
+        for (ColumnaDomain c : columnas) {
+            panelColumnas.add(KanbanColumn.from(new ColumnaProyectVolatile(proyecto, c)));
         }
     }
 

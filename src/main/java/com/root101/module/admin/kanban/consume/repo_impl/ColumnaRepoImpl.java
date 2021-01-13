@@ -40,12 +40,12 @@ public class ColumnaRepoImpl extends ConsumerRepoTemplate<ColumnaDomain> impleme
     }
 
     @Override
-    public ColumnaDomain findFirst() throws Exception {
+    public ColumnaDomain findFirst() throws RuntimeException {
         return template().getForObject(urlGeneral + COLUMNA_FIND_FIRST_PATH, ColumnaDomain.class);
     }
 
     @Override
-    public ColumnaDomain findLast() throws Exception {
+    public ColumnaDomain findLast() throws RuntimeException {
         return template().getForObject(urlGeneral + COLUMNA_FIND_LAST_PATH, ColumnaDomain.class);
     }
 }

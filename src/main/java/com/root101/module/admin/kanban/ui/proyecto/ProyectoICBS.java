@@ -36,7 +36,7 @@ public class ProyectoICBS extends InputComboBoxSelection<ProyectoDomain> {
     }
 
     @Override
-    public List<ProyectoDomain> getList() throws Exception {
+    public List<ProyectoDomain> getList() throws RuntimeException {
         return KanbanSwingModule.proyectoUC.findAll();
     }
 

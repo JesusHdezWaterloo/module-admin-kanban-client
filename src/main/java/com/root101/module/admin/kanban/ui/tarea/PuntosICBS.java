@@ -35,7 +35,7 @@ public class PuntosICBS extends InputComboBoxSelection<Integer> {
     }
 
     @Override
-    public List<Integer> getList() throws Exception {
+    public List<Integer> getList() throws RuntimeException {
         return Arrays.asList(FibonacciNumberUtils.generateFibboFixed());
     }
 
