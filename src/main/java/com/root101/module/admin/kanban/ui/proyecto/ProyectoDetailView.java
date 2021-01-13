@@ -126,12 +126,7 @@ public class ProyectoDetailView extends CleanDetailCRUDDragDrop<ProyectoDomain> 
 
     @Override
     protected ProyectoDomain deleteAction(ProyectoDomain obj) {
-        try {
             return KanbanSwingModule.proyectoUC.destroy(obj);
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
-        return null;
     }
 
     private void addActionsElements() {

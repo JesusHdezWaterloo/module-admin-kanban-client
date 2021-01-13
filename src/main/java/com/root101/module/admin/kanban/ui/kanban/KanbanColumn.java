@@ -158,16 +158,12 @@ public class KanbanColumn extends _MaterialPanelComponent implements Update {
     }
 
     private void doMoveTask(JPanel dragged, Component targetDrop) {
-        try {
-            if (dragged instanceof TareaSimplePanel) {
-                TareaSimplePanel tarea = (TareaSimplePanel) dragged;
-                TareaDomain t = tarea.getObject();
-                t.setProyectoFk(colProy.getProyecto());
-                t.setColumnaFk(colProy.getColumna());
-                KanbanSwingModule.tareaUC.move(MoveTarea.from(t, colProy.getColumna()));
-            }
-        } catch (Exception e) {
-            ExceptionHandler.handleException(e);
+        if (dragged instanceof TareaSimplePanel) {
+            TareaSimplePanel tarea = (TareaSimplePanel) dragged;
+            TareaDomain t = tarea.getObject();
+            t.setProyectoFk(colProy.getProyecto());
+            t.setColumnaFk(colProy.getColumna());
+            KanbanSwingModule.tareaUC.move(MoveTarea.from(t, colProy.getColumna()));
         }
     }
 

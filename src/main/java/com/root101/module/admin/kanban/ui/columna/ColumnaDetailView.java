@@ -56,11 +56,7 @@ public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
 
     @Override
     public void update() {
-        try {
-            setCollection(KanbanSwingModule.columnaUC.findAll());
-        } catch (Exception e) {
-            ExceptionHandler.handleException(e);
-        }
+        setCollection(KanbanSwingModule.columnaUC.findAll());
     }
 
     @Override
@@ -78,12 +74,7 @@ public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
 
     @Override
     protected ColumnaDomain deleteAction(ColumnaDomain obj) {
-        try {
-            return KanbanSwingModule.columnaUC.destroy(obj);
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
-        return null;
+        return KanbanSwingModule.columnaUC.destroy(obj);
     }
 
     @Override

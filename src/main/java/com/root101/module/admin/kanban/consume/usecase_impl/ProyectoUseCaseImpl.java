@@ -58,24 +58,19 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
             Git git = new Git(localRepo);
             return !git.remoteList().call().isEmpty();
         } catch (Exception e) {
+            return false;
         }
-
-        return false;
     }
 
     @Override
     public void irACarpeta(ProyectoDomain proyecto) {
-        try {
-            Opener.from(proyecto.getUrlLocal()).open();
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
+        Opener.from(proyecto.getUrlLocal()).open();
     }
 
     @Override
     public void irARepoOnline(ProyectoDomain proyecto) {
         try {
-            Browser.from(proyecto.getUrlRepoOnline()).browse();
+            Browser.from(proyecto.getUrlRepoOnline()).browse();//crear la url puede dar error
         } catch (Exception ex) {
             ExceptionHandler.handleException(ex);
         }
@@ -83,11 +78,7 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
 
     @Override
     public void copiarURLLocal(ProyectoDomain proyecto) {
-        try {
-            ClipboardUtils.copy(proyecto.getUrlLocal());
-        } catch (Exception ex) {
-            ExceptionHandler.handleException(ex);
-        }
+        ClipboardUtils.copy(proyecto.getUrlLocal());
     }
 
     /**
