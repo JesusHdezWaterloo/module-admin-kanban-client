@@ -44,7 +44,7 @@ public class PrioridadICBSPopup extends InputPopupSelection<PrioridadDomain> {
     }
 
     @Override
-    public List<PrioridadDomain> getList() throws Exception {
+    public List<PrioridadDomain> getList() throws RuntimeException {
         return KanbanSwingModule.prioridadUC.findAll();
     }
 

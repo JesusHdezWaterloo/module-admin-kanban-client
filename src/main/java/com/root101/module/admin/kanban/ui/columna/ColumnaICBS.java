@@ -36,7 +36,7 @@ public class ColumnaICBS extends InputComboBoxSelection<ColumnaDomain> {
     }
 
     @Override
-    public List<ColumnaDomain> getList() throws Exception {
+    public List<ColumnaDomain> getList() throws RuntimeException {
         return KanbanSwingModule.columnaUC.findAll();
     }
 

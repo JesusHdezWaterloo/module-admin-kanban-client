@@ -39,12 +39,12 @@ public class TareaUseCaseImpl extends DefaultCRUDUseCase<TareaDomain> implements
     }
 
     @Override
-    public List<TareaDomain> findByColumnaProyecto(ColumnaProyectVolatile.LightWeigth colProy) throws Exception {
+    public List<TareaDomain> findByColumnaProyecto(ColumnaProyectVolatile.LightWeigth colProy) throws RuntimeException {
         return repoUC.findByColumnaProyecto(colProy);
     }
 
     @Override
-    public TareaDomain move(MoveTarea move) throws Exception {
+    public TareaDomain move(MoveTarea move) throws RuntimeException {
         TareaDomain tarea = repoUC.move(move);
         firePropertyChange("edit", null, tarea);
         return tarea;

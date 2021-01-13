@@ -37,7 +37,7 @@ public class PrioridadUseCaseImpl extends DefaultCRUDUseCase<PrioridadDomain> im
     }
 
     @Override
-    public List<PrioridadDomain> findAll(String searchText) throws Exception {
+    public List<PrioridadDomain> findAll(String searchText) throws RuntimeException {
         return repoUC.findAll(searchText);
     }
 

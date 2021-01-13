@@ -76,7 +76,7 @@ public class ProyectoDetailView extends CleanDetailCRUDDragDrop<ProyectoDomain> 
     }
 
     @Override
-    protected List<ProyectoDomain> getListUpdate() throws Exception {
+    protected List<ProyectoDomain> getListUpdate() throws RuntimeException {
         return KanbanSwingModule.proyectoUC.findAll();
     }
 

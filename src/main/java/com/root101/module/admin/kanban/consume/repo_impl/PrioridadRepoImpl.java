@@ -44,7 +44,7 @@ public class PrioridadRepoImpl extends ConsumerRepoTemplate<PrioridadDomain> imp
     }
 
     @Override
-    public List<PrioridadDomain> findAll(String searchText) throws Exception {
+    public List<PrioridadDomain> findAll(String searchText) throws RuntimeException {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH, searchText);
         return RestTemplateUtils.getForList(template(), urlGeneral + PRIORIDAD_FIND_ALL_SEARCH_PATH, map, PrioridadDomain.class);

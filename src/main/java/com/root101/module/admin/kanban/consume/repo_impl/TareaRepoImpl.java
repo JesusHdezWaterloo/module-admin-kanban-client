@@ -46,7 +46,7 @@ public class TareaRepoImpl extends ConsumerRepoTemplate<TareaDomain> implements 
     }
 
     @Override
-    public List<TareaDomain> findByColumnaProyecto(ColumnaProyectVolatile.LightWeigth colProy) throws Exception {
+    public List<TareaDomain> findByColumnaProyecto(ColumnaProyectVolatile.LightWeigth colProy) throws RuntimeException {
         Map<String, Object> map = new HashMap<>();
         map.put(COLUMNA, colProy.idColumna);
         map.put(PROYECTO, colProy.idProyecto);
@@ -54,7 +54,7 @@ public class TareaRepoImpl extends ConsumerRepoTemplate<TareaDomain> implements 
     }
 
     @Override
-    public TareaDomain move(MoveTarea move) throws Exception {
+    public TareaDomain move(MoveTarea move) throws RuntimeException {
         return template().postForObject(urlGeneral + TAREA_MOVE_PATH, move, TareaDomain.class);
     }
 

@@ -30,9 +30,9 @@ public interface ProyectoUseCaseConsume extends ProyectoUseCase {
      * Actualiza todas las ramas contra el repo online
      *
      * @param proyecto
-     * @throws Exception
+     * @throws RuntimeException
      */
-    public void updateRemote(ProyectoDomain proyecto) throws Exception;
+    public void updateRemote(ProyectoDomain proyecto) throws RuntimeException;
 
     /**
      * Revisa si un proyecto tiene al menos un remote

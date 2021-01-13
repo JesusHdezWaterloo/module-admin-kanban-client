@@ -94,14 +94,14 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
      * No funciona, no se ha echo la integracion con git
      *
      * @param proyecto
-     * @throws Exception
+     * @throws RuntimeException
      * @deprecated
      */
     @Override
     @Deprecated
-    public void updateRemote(ProyectoDomain proyecto) throws Exception {
+    public void updateRemote(ProyectoDomain proyecto) throws RuntimeException {
         //creo el repo, con el .git detras
-        Repository localRepo = new FileRepository(proyecto.getUrlLocal() + "\\.git");
+        /*Repository localRepo = new FileRepository(proyecto.getUrlLocal() + "\\.git");
 
         //rama actual
         String actualBranch = localRepo.getFullBranch();
@@ -154,12 +154,12 @@ public class ProyectoUseCaseImpl extends DefaultCRUDUseCase<ProyectoDomain> impl
                             "A123b456**"
                     )
             ).call();
-        }*/
+        }
         //regreso a la rama original
         NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SIMPLE_TEXT,
                 "Checkout para la rama original: " + actualBranch);
         git.checkout().setName(actualBranch).call();
         NotificationHandler.showNotification(NotificationsGeneralType.NOTIFICATION_SUCCESS,
-                "Actualizadas todas las ramas con el/los repos online");
+                "Actualizadas todas las ramas con el/los repos online");*/
     }
 }
