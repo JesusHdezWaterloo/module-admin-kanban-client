@@ -19,7 +19,6 @@ package com.root101.module.admin.kanban.consume.module;
 import com.root101.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.root101.module.admin.kanban.service.ResourceServiceClientImplementation;
 
 /**
  *
@@ -46,7 +45,6 @@ public class KanbanConsumeCoreModule extends DefaultAbstractModule {
      */
     private static void init() {
         INSTANCE = new KanbanConsumeCoreModule();
-        ResourceServiceClientImplementation.init();
     }
 
     @Override
