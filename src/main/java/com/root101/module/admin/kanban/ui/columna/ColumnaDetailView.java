@@ -16,20 +16,21 @@
  */
 package com.root101.module.admin.kanban.ui.columna;
 
-import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.admin.kanban.core.domain.ColumnaDomain;
+import com.root101.module.admin.kanban.ui.export.ColumnaExport;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
-import com.root101.swing.models.detail._MaterialPanelDetail;
 import com.root101.swing.material.components.table.Column;
-import com.root101.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.models.clean.CleanDetailCRUDDragDrop;
+import com.root101.swing.models.input.panels.ModelPanel;
+import java.util.List;
 
 /**
  *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */
-public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
+public class ColumnaDetailView extends CleanDetailCRUDDragDrop<ColumnaDomain> {
 
     private static final String COL_NOMBRE = "Nombre";
     private static final String COL_POS = "Posición";
@@ -45,18 +46,19 @@ public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
         this.personalize();
     }
 
-    private void personalize() {
-        //addActionsExtra();
-
+    @Override
+    protected void personalize() {
         this.setHeaderText("Columnas");
         this.setIcon(KanbanModuleNavigator.ICON_COLUMNA);
 
         this.setActionColumnButtonsVisivility(true, true, false);//no pone el view, no esta implementado todavia
+
+        this.setExportConfig(ColumnaExport.from(this));
     }
 
     @Override
-    public void update() {
-        setCollection(KanbanSwingModule.columnaUC.findAll());
+    protected List<ColumnaDomain> getListUpdate() {
+        return KanbanSwingModule.columnaUC.findAll();
     }
 
     @Override
@@ -68,8 +70,18 @@ public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
     }
 
     @Override
-    protected void buttonNuevoActionListener() {
-        new DialogModelInput(this, ColumnaInputView.from());
+    protected void addPropertyChange() {
+        KanbanSwingModule.columnaUC.addPropertyChangeListener(this);
+    }
+
+    @Override
+    protected ModelPanel<ColumnaDomain> getModelPanelNew() {
+        return ColumnaInputView.from();
+    }
+
+    @Override
+    protected ModelPanel<ColumnaDomain> getModelPanelEdit(ColumnaDomain obj) {
+        return ColumnaInputView.fromModel(obj);
     }
 
     @Override
@@ -77,26 +89,4 @@ public class ColumnaDetailView extends _MaterialPanelDetail<ColumnaDomain> {
         return KanbanSwingModule.columnaUC.destroy(obj);
     }
 
-    @Override
-    protected void editAction(ColumnaDomain obj) {
-        new DialogModelInput(this, ColumnaInputView.fromModel(obj));
-    }
-
-    @Override
-    protected void viewAction(ColumnaDomain obj) {
-        System.out.println("NO NECESARIO TODAVÍA.");
-    }
-    /*
-    private void addActionsExtra() {
-        this.addActionExtra(new AbstractAction("Contratar", MaterialIcons.ASSIGNMENT_IND.deriveIcon(18f)) {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                onContratarEmpleadoActionPerformed();
-            }
-        });
-    }
-
-    private void onContratarEmpleadoActionPerformed() {
-        new DialogModelInput(this, ContratoEmpleadoInputView.from(getSelectedElement()));
-    }*/
 }
