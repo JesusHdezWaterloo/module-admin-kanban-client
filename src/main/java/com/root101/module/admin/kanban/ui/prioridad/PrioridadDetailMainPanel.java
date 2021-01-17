@@ -16,7 +16,6 @@
  */
 package com.root101.module.admin.kanban.ui.prioridad;
 
-import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.admin.kanban.core.domain.PrioridadDomain;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
@@ -69,6 +68,8 @@ public class PrioridadDetailMainPanel extends _MaterialPanel implements Update {
         this.add(header, BorderLayout.NORTH);
 
         this.add(panelCuentasSingle);
+        
+        //addOptionElement(MaterialExportButton.from(PrioridadExport.from()));
     }
 
     private HeaderDetailPanel header;
@@ -111,7 +112,7 @@ public class PrioridadDetailMainPanel extends _MaterialPanel implements Update {
     }
 
     public void createAction() {
-        new DialogModelInput(this, PrioridadInputView.from());
+        DialogModelInput.from(PrioridadInputView.from());
     }
 
     @Override

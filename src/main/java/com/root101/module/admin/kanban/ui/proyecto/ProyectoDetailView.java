@@ -16,8 +16,8 @@
  */
 package com.root101.module.admin.kanban.ui.proyecto;
 
-import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.admin.kanban.core.domain.ProyectoDomain;
+import com.root101.module.admin.kanban.ui.export.ProyectoExport;
 import com.root101.module.admin.kanban.ui.module.KanbanModuleNavigator;
 import com.root101.module.admin.kanban.ui.module.KanbanSwingModule;
 import com.root101.swing.material.components.container.MaterialContainersFactory;
@@ -73,6 +73,8 @@ public class ProyectoDetailView extends CleanDetailCRUDDragDrop<ProyectoDomain> 
         getTable().getColumn(COL_GITHUB).setCellRenderer(new ComponentCellRender(false));
 
         this.setActionColumnButtonsVisivility(true, true, false);//no pone el view, no esta implementado todavia
+
+        this.setExportConfig(ProyectoExport.from(this));
     }
 
     @Override
