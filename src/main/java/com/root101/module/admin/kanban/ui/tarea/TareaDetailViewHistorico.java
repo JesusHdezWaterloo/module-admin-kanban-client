@@ -53,8 +53,6 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
 
     @Override
     protected void personalize() {
-        addActionsElements();
-
         this.setAdjustColumns(true);
         this.setHeaderText("Tareas (Histórico)");
         this.setIcon(KanbanModuleNavigator.ICON_TAREA);
@@ -97,10 +95,6 @@ public class TareaDetailViewHistorico extends CleanDetailCRUDDragDrop<TareaDomai
     @Override
     protected TareaDomain deleteAction(TareaDomain obj) {
         return KanbanSwingModule.tareaUC.destroy(obj);
-    }
-
-    private void addActionsElements() {
-
     }
 
 }

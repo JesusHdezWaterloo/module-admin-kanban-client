@@ -16,17 +16,18 @@
  */
 package com.root101.module.admin.kanban.ui.module;
 
+import com.root101.clean.core.domain.services.ResourceHandler;
 import com.root101.clean.swing.app.AbstractSwingApplication;
 import com.root101.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.root101.clean.swing.app.dashboard.DashBoardSimple;
 import com.root101.clean.swing.app.dashboard.DashboardConstants;
 import com.root101.clean.swing.utils.DashBoardComponent;
 import com.root101.module.admin.kanban.consume.module.KanbanConsumeCoreModule;
-import com.root101.module.admin.kanban.service.ResourceServiceClientImplementation;
-import com.root101.module.admin.kanban.service.ResourceServiceImplementation;
 import com.root101.swing.material.components.taskpane.CollapseMenu;
 import com.root101.swing.models.utils.UpdateListener;
 import com.root101.module.admin.kanban.consume.usecase_def.*;
+import com.root101.module.admin.kanban.service.ResourceKeysClient;
+import com.root101.module.admin.kanban.service.ResourceKeysStandard;
 import com.root101.utils.interfaces.Update;
 
 /**
@@ -63,9 +64,9 @@ public class KanbanSwingModule extends DefaultAbstractSwingMainModule implements
     public static KanbanSwingModule init() {
         System.out.println("Iniciando 'Kanban'");
 
-        ResourceServiceImplementation.init();//inicio el general
-        ResourceServiceClientImplementation.init();//inicio el mio
-
+        ResourceHandler.registerInternal(ResourceKeysClient.RESOURCE_URL);
+        ResourceHandler.registerInternal(ResourceKeysStandard.RESOURCE_URL);
+        
         return new KanbanSwingModule();
     }
 
